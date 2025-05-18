@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading...</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Insert your full .loadingspinner CSS here */
+    /* -- your long CSS pasted exactly as you already have it -- */
+    /* From Uiverse.io by Nawsome */
+    .loadingspinner {
+      --square: 26px;
+      --offset: 30px;
+      --duration: 2.4s;
+      --delay: 0.2s;
+      --timing-function: ease-in-out;
+      --in-duration: 0.4s;
+      --in-delay: 0.1s;
+      --in-timing-function: ease-out;
+      width: calc( 3 * var(--offset) + var(--square));
+      height: calc( 2 * var(--offset) + var(--square));
+      margin: auto;
+      position: relative;
+    }
+
+    .loadingspinner div {
+      display: inline-block;
+      background: #FFD700;
+      border-radius: 2px;
+      width: var(--square);
+      height: var(--square);
+      position: absolute;
+      font-size: 6pt;
+      color: black;
+    }
+
+    .loadingspinner #square1 {
+      left: 0;
+      top: 0;
+      animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+                 squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square2 {
+      left: 0;
+      top: var(--offset);
+      animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+                 squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square3 {
+      left: var(--offset);
+      top: var(--offset);
+      animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+                 squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square4 {
+      left: calc(2 * var(--offset));
+      top: var(--offset);
+      animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+                 squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square5 {
+      left: calc(3 * var(--offset));
+      top: var(--offset);
+      animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+                 squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    /* Include all your keyframes exactly as you have them */
+    @keyframes square1 {
+      0% { left: 0; top: 0; }
+      8.333% { top: var(--offset); }
+      100% { top: var(--offset); }
+    }
+
+    @keyframes square2 {
+      0% { top: var(--offset); left: 0; }
+      8.333% { top: calc(2 * var(--offset)); }
+      16.67% { left: var(--offset); }
+      25% { top: var(--offset); }
+      83.33% { top: var(--offset); }
+      91.67% { top: 0; }
+      100% { left: 0; top: 0; }
+    }
+
+    @keyframes square3 {
+      0%,100% { left: var(--offset); top: var(--offset); }
+      25% { top: 0; }
+      33.33% { left: calc(2 * var(--offset)); }
+      41.67% { top: var(--offset); }
+      75% { top: calc(2 * var(--offset)); }
+      83.33% { left: var(--offset); }
+    }
+
+    @keyframes square4 {
+      41.67% { top: calc(2 * var(--offset)); }
+      50% { left: calc(3 * var(--offset)); }
+      58.33% { top: var(--offset); }
+    }
+
+    @keyframes square5 {
+      58.33% { top: 0; }
+      66.67% { left: calc(2 * var(--offset)); }
+      75% { top: var(--offset); }
+    }
+
+    @keyframes squarefadein {
+      0% { transform: scale(0.75); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://binaryvortex.github.io/NEXORA/"; // ✅ Set your destination page here
+    }, 5000);
+  </script>
+</head>
+<body>
+  <div class="loadingspinner">
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <div id="square4"></div>
+    <div id="square5"></div>
+  </div>
+</body>
+</html>
